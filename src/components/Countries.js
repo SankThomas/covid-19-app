@@ -17,6 +17,29 @@ const Countries = () => {
 
   return (
     <>
+      <div className="bg-gray-900">
+        <p className="text-white text-center px-10">
+          This app uses the postman Covid 19 API which is updated daily.
+        </p>
+        <div className="text-white flex items-center justify-center">
+          <a
+            href="https://api.covid19api.com/summary"
+            target="_blank"
+            rel="noopenner noreferrer"
+            className="bg-green-500 mx-2 px-4 py-1 rounded mt-5 transition-colors hover:bg-green-800"
+          >
+            JSON API
+          </a>
+          <a
+            href="https://documenter.getpostman.com/view/10808728/SzS8rjbc"
+            target="_blank"
+            rel="noopenner noreferrer"
+            className="bg-green-500 mx-2 px-4 py-1 rounded mt-5 transition-colors hover:bg-green-800"
+          >
+            API Documentation
+          </a>
+        </div>
+      </div>
       <section className="bg-gray-900 grid grid-cols-1 gap-10 px-10 py-10 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 2xl:px-20">
         {countries.Countries.map((country) => {
           const {
