@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './components/Navbar'
-import Countries from './components/Countries'
+import Header from './components/Header'
+import FetchData from './components/FetchData'
 // import Search from './components/Search'
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
     <>
       <Navbar />
       {/* <Search /> */}
-      <Countries />
+      <Header />
+      <FetchData />
     </>
   )
 }

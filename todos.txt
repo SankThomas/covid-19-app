@@ -1,1 +1,2 @@
-Remember to change meta theme-color
+1. Remember to change meta theme-color
+2. Implement search
