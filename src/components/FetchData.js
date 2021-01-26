@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from 'react'
+import moment from 'moment'
+import axios from 'axios'
 
 const FetchData = () => {
   const [countries, setCountries] = useState([])
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch('https://api.covid19api.com/summary')
-      const countries = await response.json()
-      setCountries(countries.Countries)
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('https://api.covid19api.com/summary')
+      setCountries(response.data.Countries)
+    } catch (error) {
+      console.error(error)
     }
+  }
 
+  useEffect(() => {
     fetchData()
   }, [])
 
@@ -27,6 +32,7 @@ const FetchData = () => {
             TotalDeaths,
             NewRecovered,
             TotalRecovered,
+            Date,
           } = country
 
           return (
@@ -57,6 +63,10 @@ const FetchData = () => {
                 <li className="flex justify-between my-2 text-pink-300">
                   <span className="font-bold">Total Recovered Cases:</span>{' '}
                   {TotalRecovered}
+                </li>
+                <li className="text-green-100 mt-5">
+                  <span className="font-bold">Date:</span>{' '}
+                  {moment(`${Date}`).format('MMMM Do YYYY hh:mm:ss')}
                 </li>
               </ul>
             </div>
