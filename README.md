@@ -6,7 +6,7 @@
 
 ## Status
 
-- The app is still in development. Check back later for the live link.
+Live link: https://covid-19-web-app-tsb.netlify.app
 
 ## Requirements
 
